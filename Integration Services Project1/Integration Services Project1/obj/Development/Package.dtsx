@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/31/2023 3:24:58 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-12RK9J3"
+  DTS:CreatorName="DESKTOP-12RK9J3\pc"
+  DTS:DTSID="{C9F96974-E2F0-4F3B-A4E2-E60332EF60E5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{56DB6C29-EAEC-4E7F-A15C-5C42A252D56E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[A2NWPLSK14SQL-v04.shr.prod.iad2.secureserver.net.ph17084146784]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{802C0C0D-47D9-4F6D-BBF1-C57DD8D7C626}"
+      DTS:ObjectName="A2NWPLSK14SQL-v04.shr.prod.iad2.secureserver.net.ph17084146784">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=A2NWPLSK14SQL-v04.shr.prod.iad2.secureserver.net;UseWindowsAuthentication=False;UserName=ph17084146784;"
+          ConnectByProxy="False">
+          <PassWord
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5UouPQRf1EOdexEnoldP1gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABuHqTL6hA2kITgEtjacc7bvsYR/YFebefQv4lzTFzyGgAAAAAOgAAAAAIAACAAAAC49sKQBD/+WspJZDtMnCvztq6WcEHfLOv6wXyc1YozIyAAAABGcqh7LXoWOOeyD3WsumyoJjm6tUngvuxqCVbN/s9hkkAAAABhctQ0oTGPgSznGqTCxJJSuddyQbSql0g9VkbQE6+S/QlLoMMEuHQ3XLuyqxcN0rM/cMB8X+eKv3Si0blJqqsE</PassWord>
+        </SMOServerConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-12RK9J3.sa]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{8BBD6F21-030F-414D-9378-D81C4277C793}"
+      DTS:ObjectName="DESKTOP-12RK9J3.sa">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=DESKTOP-12RK9J3;UseWindowsAuthentication=False;UserName=sa;"
+          ConnectByProxy="False">
+          <PassWord
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5UouPQRf1EOdexEnoldP1gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADmmEQbcX7J+h0/bonUFluun5cc/1MThN5wUxy0Yoe61QAAAAAOgAAAAAIAACAAAADniyEK3A8VSdBYkZ4gF3EFKxuijTF8PfRLEMJinoeRACAAAABYQgejW4uFG+kLrSS2RLlUF4xog1wd9ZeVtc7PfTySmEAAAACA5DN96zm6JhFk8BF9yOlBd3sEXeFGR0wvAv89DC4KkbpqmJvKcgwjl/vPwdDyE1sdSiHkdV6NT7ClI4wOqZ6K</PassWord>
+        </SMOServerConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer SQL Server Objects Task"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{3D806486-7C96-4B6A-8F92-533E005ADBC7}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer SQL Server Objects Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{8BBD6F21-030F-414D-9378-D81C4277C793}"
+          DestinationConnection="{802C0C0D-47D9-4F6D-BBF1-C57DD8D7C626}"
+          SourceDatabase="DatabaseLessonsVault"
+          DestinationDatabase="DatabaseLessonsVault"
+          TablesList="6,14,[dbo].[broker],24,[dbo].[brokerOperations],22,[dbo].[dividends_2022],16,[dbo].[investor],18,[dbo].[management],21,[dbo].[mgmtBillboard],"
+          ViewsList="1,27,[dbo].[brokerOperations_vw],"
+          StoredProceduresList="13,23,[dbo].[Broker_Login_sp],30,[dbo].[Broker_Registration_sp],35,[dbo].[BrokerTransactionsReport_sp],24,[dbo].[GetFirstNames_sp],24,[dbo].[GetMonthNames_sp],25,[dbo].[GetMyDividends_sp],25,[dbo].[Investor_Login_sp],32,[dbo].[Investor_Registration_sp],23,[dbo].[InvestorData_sp],21,[dbo].[Mgmt_Login_sp],28,[dbo].[Mgmt_Registration_sp],27,[dbo].[Stock_Operations_sp],25,[dbo].[UnlockAccounts_sp],"
+          IncludeDependentObjects="True"
+          IncludeExtendedProperties="True"
+          CopyData="True"
+          UseCollation="True"
+          CopyIndexes="True"
+          CopyTriggers="True"
+          CopyPrimaryKeys="True"
+          CopyForeignKeys="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="237.6,41.6"
+          Id="Package\Transfer SQL Server Objects Task"
+          TopLeft="308.333321081268,199.333334917492" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
